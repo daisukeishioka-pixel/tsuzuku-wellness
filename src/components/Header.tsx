@@ -39,7 +39,7 @@ export function Header() {
               {cat.nameEn}
             </Link>
           ))}
-          <a href="#articles" className="btn-primary !py-2 !px-5 !text-[0.65rem]">
+          <a href="/#articles" className="btn-primary !py-2 !px-5 !text-[0.65rem]">
             記事を読む
           </a>
         </nav>
