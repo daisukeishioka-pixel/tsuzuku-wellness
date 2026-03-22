@@ -14,7 +14,7 @@ export function HeroSection() {
             transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="order-1 lg:order-2 relative"
           >
-            <div className="relative w-full max-w-[280px] mx-auto lg:max-w-lg lg:mx-0 lg:ml-auto">
+            <div className="relative w-full max-w-[90%] mx-auto lg:max-w-lg lg:mx-0 lg:ml-auto">
               {/* Main image - shorter on mobile */}
               <div className="aspect-[4/3] md:aspect-[4/5] overflow-hidden">
                 <img
