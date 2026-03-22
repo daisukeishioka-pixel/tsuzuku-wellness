@@ -51,8 +51,8 @@ export function FeaturedArticles() {
 
   return (
     <section id="articles" className="section-padding bg-white">
-      <div className="container-main px-6 md:px-12">
-        <div className="flex items-end justify-between mb-12">
+      <div className="container-main px-5 md:px-12">
+        <div className="flex items-end justify-between mb-8 md:mb-12">
           <div>
             <p className="eyebrow">Latest Articles</p>
             <h2 className="heading-serif text-section text-text">
@@ -68,7 +68,7 @@ export function FeaturedArticles() {
         </div>
 
         {/* Featured */}
-        <Link to={`/article/${featured.slug}`} className="group block md:flex gap-10 mb-16">
+        <Link to={`/article/${featured.slug}`} className="group block md:flex gap-6 md:gap-10 mb-10 md:mb-16">
           <div className="md:w-3/5 overflow-hidden bg-bg-cream">
             <img
               src={featured.imageUrl}

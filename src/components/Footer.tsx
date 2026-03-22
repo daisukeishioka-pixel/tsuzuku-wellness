@@ -5,7 +5,7 @@ import { siteConfig, categories } from '@/data/siteData'
 export function Footer() {
   return (
     <footer className="bg-dark-soft text-white/50 border-t border-dark-border">
-      <div className="container-main px-6 md:px-12 py-16 md:py-20">
+      <div className="container-main px-5 md:px-12 py-12 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
           <div className="md:col-span-1">
             <Link to="/" className="inline-block mb-5">

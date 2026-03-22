@@ -3,7 +3,7 @@ import { siteConfig } from '@/data/siteData'
 
 export function ArticleCTAInline() {
   return (
-    <div className="my-12 p-6 md:p-8 bg-bg-cream border-l-2 border-primary">
+    <div className="my-12 p-5 md:p-8 bg-bg-cream border-l-2 border-primary">
       <p className="text-[0.6rem] tracking-[0.2em] uppercase text-primary/60 mb-2">Community</p>
       <h4 className="font-serif text-lg text-text mb-2">
         つづくウェルネス コミュニティ
@@ -29,7 +29,7 @@ export function ArticleCTABottom() {
   return (
     <div className="mt-16 space-y-6">
       {/* LINE Community */}
-      <div className="p-6 md:p-8 bg-dark text-white">
+      <div className="p-5 md:p-8 bg-dark text-white">
         <div className="flex items-start gap-4">
           <Users size={24} className="text-primary shrink-0 mt-1" strokeWidth={1.5} />
           <div>
@@ -56,7 +56,7 @@ export function ArticleCTABottom() {
       </div>
 
       {/* RESIST */}
-      <div className="p-6 md:p-8 bg-bg-warm border border-border">
+      <div className="p-5 md:p-8 bg-bg-warm border border-border">
         <p className="text-[0.6rem] tracking-[0.2em] uppercase text-text-light mb-2">Supervised by</p>
         <h4 className="font-serif text-lg text-text mb-2">
           この記事の監修

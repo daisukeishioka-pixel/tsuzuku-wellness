@@ -34,45 +34,46 @@ const pillars = [
 export function PhilosophySection() {
   return (
     <section id="philosophy" className="section-padding bg-bg-warm">
-      <div className="container-main px-6 md:px-12">
-        <div className="max-w-2xl mb-16">
+      <div className="container-main px-5 md:px-12">
+        <div className="max-w-2xl mb-10 md:mb-16">
           <p className="eyebrow">Our Philosophy</p>
-          <h2 className="heading-serif text-section text-text mb-6">
+          <h2 className="heading-serif text-section text-text mb-4 md:mb-6">
             健康とは、幸せに<br/>生きるための土台。
           </h2>
           <p className="text-sm text-text-secondary leading-relaxed max-w-lg">
             ジムに通うことだけが健康ではありません。
             よく眠り、よく食べ、適度に動き、心を整える。
             その小さな積み重ねが、あなたの人生を豊かにしていく。
-            私たちは、そう信じています。
           </p>
         </div>
 
-        {/* 4 Pillars */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {pillars.map((pillar, i) => (
-            <motion.div
-              key={pillar.number}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="group"
-            >
-              <div className="aspect-[4/5] overflow-hidden mb-5">
-                <img
-                  src={pillar.image}
-                  alt={pillar.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <span className="text-[0.6rem] tracking-[0.2em] text-text-light">{pillar.number}</span>
-              <h3 className="font-serif text-2xl text-text mt-1 mb-1">{pillar.title}</h3>
-              <p className="text-[0.65rem] tracking-[0.15em] uppercase text-primary/60 mb-3">{pillar.subtitle}</p>
-              <p className="text-xs text-text-secondary leading-relaxed">{pillar.desc}</p>
-            </motion.div>
-          ))}
+        {/* 4 Pillars - horizontal scroll on mobile, grid on desktop */}
+        <div className="overflow-x-auto scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0 md:overflow-visible">
+          <div className="flex gap-4 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6" style={{ minWidth: 'max-content' }}>
+            {pillars.map((pillar, i) => (
+              <motion.div
+                key={pillar.number}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                className="group w-[200px] md:w-auto shrink-0 md:shrink"
+              >
+                <div className="aspect-[3/4] overflow-hidden mb-4 md:mb-5">
+                  <img
+                    src={pillar.image}
+                    alt={pillar.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <span className="text-[0.55rem] md:text-[0.6rem] tracking-[0.2em] text-text-light">{pillar.number}</span>
+                <h3 className="font-serif text-xl md:text-2xl text-text mt-1 mb-1">{pillar.title}</h3>
+                <p className="text-[0.6rem] md:text-[0.65rem] tracking-[0.15em] uppercase text-primary/60 mb-2 md:mb-3">{pillar.subtitle}</p>
+                <p className="text-[0.7rem] md:text-xs text-text-secondary leading-relaxed">{pillar.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

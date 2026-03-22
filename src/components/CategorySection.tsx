@@ -14,8 +14,8 @@ const categoryImages: Record<string, string> = {
 
 export function CategorySection() {
   return (
-    <section className="section-padding bg-white">
-      <div className="container-main px-6 md:px-12 mb-10">
+    <section className="section-padding bg-white overflow-hidden">
+      <div className="container-main px-5 md:px-12 mb-8 md:mb-10">
         <p className="eyebrow">Categories</p>
         <h2 className="heading-serif text-section text-text">
           あなたの暮らしに合う<br className="md:hidden" />テーマを探す
@@ -23,7 +23,7 @@ export function CategorySection() {
       </div>
 
       <div className="overflow-x-auto scrollbar-hide">
-        <div className="flex gap-5 px-6 md:px-12 pb-4" style={{ minWidth: 'max-content' }}>
+        <div className="flex gap-4 px-5 md:px-12 pb-4" style={{ minWidth: 'max-content' }}>
           {categories.map((cat, i) => (
             <motion.div
               key={cat.slug}
@@ -34,7 +34,7 @@ export function CategorySection() {
             >
               <Link
                 to={`/category/${cat.slug}`}
-                className="group relative block w-[240px] md:w-[280px] overflow-hidden"
+                className="group relative block w-[200px] md:w-[280px] overflow-hidden"
               >
                 <div className="aspect-[3/4] overflow-hidden bg-bg-cream">
                   <img

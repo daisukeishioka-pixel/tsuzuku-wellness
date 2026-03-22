@@ -61,10 +61,10 @@ export function CaloriePage() {
   return (
     <div className="pt-20">
       <section className="bg-bg-warm border-b border-border">
-        <div className="container-main px-6 md:px-12 py-16 md:py-24">
+        <div className="container-main px-5 md:px-12 py-16 md:py-24">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="eyebrow">Health Tool</p>
-            <h1 className="heading-serif text-4xl md:text-5xl text-text mb-4">カロリー計算</h1>
+            <h1 className="heading-serif text-3xl md:text-5xl text-text mb-4">カロリー計算</h1>
             <p className="text-sm text-text-secondary leading-relaxed max-w-lg">
               基礎代謝量（BMR）と1日の消費カロリー（TDEE）を計算し、目標に合わせた摂取カロリーの目安を算出します。
             </p>
@@ -73,7 +73,7 @@ export function CaloriePage() {
       </section>
 
       <section className="section-padding bg-white">
-        <div className="container-main px-6 md:px-12 max-w-2xl">
+        <div className="container-main px-5 md:px-12 max-w-2xl">
           <div className="p-6 md:p-8 bg-bg-warm border border-border mb-8">
             {/* Gender */}
             <div className="mb-5">
@@ -96,7 +96,7 @@ export function CaloriePage() {
             </div>
 
             {/* Age, Height, Weight */}
-            <div className="grid grid-cols-3 gap-4 mb-5">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-5">
               <div>
                 <label className="text-[0.65rem] tracking-[0.15em] uppercase text-text-light block mb-2">年齢</label>
                 <input type="number" value={age} onChange={(e) => setAge(e.target.value)} placeholder="30"
@@ -146,7 +146,7 @@ export function CaloriePage() {
           {result && (
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-12">
               <div className="p-6 md:p-8 border border-border">
-                <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
                   <div className="text-center p-4 bg-bg-warm">
                     <p className="text-[0.6rem] tracking-[0.2em] uppercase text-text-light mb-1">基礎代謝量 (BMR)</p>
                     <p className="font-serif text-3xl text-text">{result.bmr}<span className="text-sm ml-1">kcal</span></p>
@@ -175,7 +175,7 @@ export function CaloriePage() {
 
                 {/* Macros */}
                 <h3 className="font-serif text-lg text-text mb-4">PFCバランス目安（維持カロリー）</h3>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                   {[
                     { label: 'タンパク質', value: result.macros.protein, unit: 'g', sub: `${result.macros.protein * 4} kcal`, color: '#E63946' },
                     { label: '脂質', value: result.macros.fat, unit: 'g', sub: `${result.macros.fat * 9} kcal`, color: '#FF9800' },

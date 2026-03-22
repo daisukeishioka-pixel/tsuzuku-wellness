@@ -37,7 +37,7 @@ export function AboutPage() {
     <div className="pt-20">
       {/* Hero */}
       <section className="bg-bg-warm border-b border-border">
-        <div className="container-main px-6 md:px-12 py-20 md:py-32">
+        <div className="container-main px-5 md:px-12 py-20 md:py-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ export function AboutPage() {
 
       {/* Mission */}
       <section className="section-padding bg-white">
-        <div className="container-main px-6 md:px-12">
+        <div className="container-main px-5 md:px-12">
           <div className="md:flex md:gap-16 md:items-start">
             <div className="md:w-1/2 mb-10 md:mb-0">
               <p className="eyebrow">Our Mission</p>
@@ -86,7 +86,7 @@ export function AboutPage() {
 
       {/* Values */}
       <section className="section-padding bg-bg-warm">
-        <div className="container-main px-6 md:px-12">
+        <div className="container-main px-5 md:px-12">
           <p className="eyebrow">Our Values</p>
           <h2 className="heading-serif text-section text-text mb-12">
             私たちが大切にしていること
@@ -114,12 +114,12 @@ export function AboutPage() {
 
       {/* Categories */}
       <section className="section-padding bg-white">
-        <div className="container-main px-6 md:px-12">
+        <div className="container-main px-5 md:px-12">
           <p className="eyebrow">What We Cover</p>
           <h2 className="heading-serif text-section text-text mb-10">
             6つのテーマ
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {categories.map((cat) => (
               <Link
                 key={cat.slug}
@@ -137,7 +137,7 @@ export function AboutPage() {
 
       {/* Supervision */}
       <section className="section-padding bg-dark text-white">
-        <div className="container-main px-6 md:px-12">
+        <div className="container-main px-5 md:px-12">
           <div className="md:flex md:gap-16 md:items-center">
             <div className="md:w-1/2 mb-10 md:mb-0">
               <div className="aspect-[4/3] overflow-hidden">
@@ -176,7 +176,7 @@ export function AboutPage() {
 
       {/* Community */}
       <section className="section-padding bg-white">
-        <div className="container-main px-6 md:px-12 max-w-3xl text-center">
+        <div className="container-main px-5 md:px-12 max-w-3xl text-center">
           <p className="eyebrow">Community</p>
           <h2 className="heading-serif text-section text-text mb-6">
             つづくウェルネス<br/>メンバーシップ
@@ -186,7 +186,7 @@ export function AboutPage() {
             毎週のライブ配信で記事の内容をさらに深掘り。全国各地で開催するウェルネスイベントの情報もお届けします。
             一人では続かないことも、仲間となら続けられる。
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5 mb-10">
             {[
               { icon: <Radio size={20} strokeWidth={1.5} />, title: '毎週ライブ配信', desc: '記事の深掘りやQ&Aをリアルタイムで' },
               { icon: <MapPin size={20} strokeWidth={1.5} />, title: '各地イベント開催', desc: '全国各地でウェルネスイベントを企画' },
@@ -207,7 +207,7 @@ export function AboutPage() {
 
       {/* Timeline */}
       <section className="section-padding bg-bg-warm">
-        <div className="container-main px-6 md:px-12 max-w-2xl">
+        <div className="container-main px-5 md:px-12 max-w-2xl">
           <p className="eyebrow">History</p>
           <h2 className="heading-serif text-section text-text mb-10">あゆみ</h2>
           <div className="space-y-8">

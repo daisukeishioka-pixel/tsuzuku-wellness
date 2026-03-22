@@ -25,7 +25,7 @@ export function CategoryPage() {
     <div className="pt-20">
       {/* Category header */}
       <section className="bg-bg-warm border-b border-border">
-        <div className="container-main px-6 md:px-12 py-16 md:py-24">
+        <div className="container-main px-5 md:px-12 py-16 md:py-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ export function CategoryPage() {
             <p className="text-[0.6rem] tracking-[0.2em] uppercase text-text-light mb-3">
               Category
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl text-text mb-4">
+            <h1 className="font-serif text-3xl md:text-5xl text-text mb-4">
               {category.name}
             </h1>
             <p className="text-sm text-text-secondary leading-relaxed max-w-lg">
@@ -46,7 +46,7 @@ export function CategoryPage() {
 
       {/* Articles */}
       <section className="section-padding bg-white">
-        <div className="container-main px-6 md:px-12">
+        <div className="container-main px-5 md:px-12">
           {articles.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14">
               {articles.map((article, i) => (
@@ -98,7 +98,7 @@ export function CategoryPage() {
 
       {/* Other categories */}
       <section className="section-padding bg-bg-warm">
-        <div className="container-main px-6 md:px-12">
+        <div className="container-main px-5 md:px-12">
           <p className="eyebrow">Other Categories</p>
           <h2 className="heading-serif text-section text-text mb-10">
             他のテーマも読む

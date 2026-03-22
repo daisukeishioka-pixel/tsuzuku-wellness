@@ -32,7 +32,7 @@ export function ArticlePage() {
   return (
     <article className="pt-20">
       {/* Breadcrumb */}
-      <div className="container-main px-6 md:px-12 py-4">
+      <div className="container-main px-5 md:px-12 py-3 md:py-4">
         <nav className="flex items-center gap-2 text-[0.65rem] text-text-light">
           <Link to="/" className="hover:text-primary transition-colors">TOP</Link>
           <span>/</span>
@@ -40,7 +40,7 @@ export function ArticlePage() {
             {category?.name}
           </Link>
           <span>/</span>
-          <span className="text-text-secondary truncate max-w-[200px]">{article.title}</span>
+          <span className="text-text-secondary truncate max-w-[140px] md:max-w-[200px]">{article.title}</span>
         </nav>
       </div>
 
@@ -49,7 +49,7 @@ export function ArticlePage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="container-main px-6 md:px-12 mb-8"
+        className="container-main px-5 md:px-12 mb-8"
       >
         <div className="max-w-3xl">
           <span
@@ -58,7 +58,7 @@ export function ArticlePage() {
           >
             {category?.nameEn}
           </span>
-          <h1 className="font-serif text-3xl md:text-4xl text-text leading-snug mt-3 mb-5">
+          <h1 className="font-serif text-2xl md:text-4xl text-text leading-snug mt-3 mb-5">
             {article.title}
           </h1>
           <div className="flex flex-wrap items-center gap-4 text-[0.7rem] text-text-light mb-6">
@@ -76,7 +76,7 @@ export function ArticlePage() {
       </motion.header>
 
       {/* Hero image */}
-      <div className="container-main px-6 md:px-12 mb-12">
+      <div className="container-main px-5 md:px-12 mb-8 md:mb-12">
         <div className="max-w-4xl">
           <div className="aspect-[2/1] overflow-hidden bg-bg-cream">
             <img
@@ -89,7 +89,7 @@ export function ArticlePage() {
       </div>
 
       {/* Article body */}
-      <div className="container-main px-6 md:px-12">
+      <div className="container-main px-5 md:px-12">
         <div className="max-w-3xl">
           {content ? (
             <>
@@ -186,7 +186,7 @@ export function ArticlePage() {
 
       {/* Related articles */}
       <section className="section-padding bg-bg-warm mt-16">
-        <div className="container-main px-6 md:px-12">
+        <div className="container-main px-5 md:px-12">
           <p className="eyebrow">Related Articles</p>
           <h2 className="heading-serif text-section text-text mb-10">あわせて読みたい</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
@@ -222,7 +222,7 @@ export function ArticlePage() {
       <div className="border-t border-border">
         <Link
           to={`/article/${nextArticle.slug}`}
-          className="container-main px-6 md:px-12 py-8 flex items-center justify-between group"
+          className="container-main px-5 md:px-12 py-8 flex items-center justify-between group"
         >
           <div>
             <p className="text-[0.6rem] tracking-[0.2em] uppercase text-text-light mb-1">Next Article</p>

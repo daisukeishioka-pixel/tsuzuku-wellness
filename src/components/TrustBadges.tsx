@@ -11,8 +11,8 @@ const iconMap: Record<string, React.ReactNode> = {
 export function TrustBadges() {
   return (
     <section className="bg-bg-cream/60 border-y border-border/50">
-      <div className="container-main px-6 md:px-12 py-4">
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+      <div className="container-main px-5 md:px-12 py-3 md:py-4">
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-10">
           {trustBadges.map((badge) => (
             <div key={badge.label} className="flex items-center gap-2 text-text-secondary">
               <span className="text-primary/60">{iconMap[badge.icon]}</span>

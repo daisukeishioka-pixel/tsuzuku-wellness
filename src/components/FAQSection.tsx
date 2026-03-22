@@ -35,8 +35,8 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 export function FAQSection() {
   return (
     <section className="section-padding bg-white">
-      <div className="container-main px-6 md:px-12 max-w-4xl">
-        <div className="text-center mb-16">
+      <div className="container-main px-5 md:px-12 max-w-4xl">
+        <div className="text-center mb-10 md:mb-16">
           <p className="eyebrow">FAQ</p>
           <h2 className="heading-serif text-section text-text">
             よくある質問

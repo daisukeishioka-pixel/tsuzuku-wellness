@@ -4,7 +4,7 @@ import { siteConfig } from '@/data/siteData'
 export function CTASection() {
   return (
     <section className="section-padding bg-bg-cream">
-      <div className="container-main px-6 md:px-12 text-center">
+      <div className="container-main px-5 md:px-12 text-center">
         <p className="eyebrow">Start Today</p>
         <h2 className="heading-serif text-section text-text mb-6 leading-tight">
           小さな一歩が、

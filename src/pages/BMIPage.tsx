@@ -38,10 +38,10 @@ export function BMIPage() {
   return (
     <div className="pt-20">
       <section className="bg-bg-warm border-b border-border">
-        <div className="container-main px-6 md:px-12 py-16 md:py-24">
+        <div className="container-main px-5 md:px-12 py-16 md:py-24">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="eyebrow">Health Tool</p>
-            <h1 className="heading-serif text-4xl md:text-5xl text-text mb-4">BMI計算</h1>
+            <h1 className="heading-serif text-3xl md:text-5xl text-text mb-4">BMI計算</h1>
             <p className="text-sm text-text-secondary leading-relaxed max-w-lg">
               身長と体重からBMI（体格指数）を計算します。BMIは肥満度の目安として広く使われている指標です。
             </p>
@@ -50,7 +50,7 @@ export function BMIPage() {
       </section>
 
       <section className="section-padding bg-white">
-        <div className="container-main px-6 md:px-12 max-w-2xl">
+        <div className="container-main px-5 md:px-12 max-w-2xl">
           {/* Calculator */}
           <div className="p-6 md:p-8 bg-bg-warm border border-border mb-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
@@ -91,7 +91,7 @@ export function BMIPage() {
               <div className="p-6 md:p-8 border border-border">
                 <div className="text-center mb-6">
                   <p className="text-[0.6rem] tracking-[0.2em] uppercase text-text-light mb-2">あなたのBMI</p>
-                  <p className="font-serif text-5xl md:text-6xl text-text mb-2">{result.bmi.toFixed(1)}</p>
+                  <p className="font-serif text-4xl md:text-6xl text-text mb-2">{result.bmi.toFixed(1)}</p>
                   <span
                     className="inline-block text-xs tracking-[0.1em] uppercase px-4 py-1.5 text-white"
                     style={{ backgroundColor: result.category.color }}
@@ -128,7 +128,7 @@ export function BMIPage() {
               {bmiCategories.map((cat) => (
                 <div key={cat.label} className="flex items-center gap-3 py-2 border-b border-border/50">
                   <span className="w-3 h-3 shrink-0 rounded-full" style={{ backgroundColor: cat.color }} />
-                  <span className="text-sm text-text w-28 shrink-0">{cat.label}</span>
+                  <span className="text-sm text-text w-24 md:w-28 shrink-0">{cat.label}</span>
                   <span className="text-sm text-text-secondary">{cat.range}</span>
                 </div>
               ))}

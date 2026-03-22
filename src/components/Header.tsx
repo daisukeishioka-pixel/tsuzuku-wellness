@@ -21,7 +21,7 @@ export function Header() {
           : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-14 md:h-20">
         <Link to="/" className="flex items-center gap-2">
           <span className="text-text">
             <span className="font-serif font-light text-xl">つづく</span>
