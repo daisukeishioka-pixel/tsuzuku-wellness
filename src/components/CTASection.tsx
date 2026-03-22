@@ -3,27 +3,25 @@ import { siteConfig } from '@/data/siteData'
 
 export function CTASection() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Gradient background */}
+    <section className="relative overflow-hidden bg-dark">
+      {/* Subtle accent glow */}
       <div
         className="absolute inset-0"
-        style={{ background: 'linear-gradient(135deg, #FF6B35, #E63946)' }}
+        style={{
+          background:
+            'radial-gradient(ellipse at 30% 50%, rgba(230,57,70,0.12) 0%, transparent 50%), radial-gradient(ellipse at 70% 60%, rgba(255,107,53,0.08) 0%, transparent 50%)',
+        }}
       />
-      {/* Decorative circles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/10" />
-        <div className="absolute -bottom-32 -left-16 w-64 h-64 rounded-full bg-white/5" />
-      </div>
 
-      <div className="container-main relative py-16 md:py-24 text-center">
-        <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
+      <div className="container-main relative px-6 md:px-12 py-section text-center">
+        <p className="eyebrow-light">Start Your Journey</p>
+        <h2 className="heading-serif text-section md:text-[clamp(2rem,4vw,3.5rem)] text-white mb-6 leading-tight">
           あなたの"つづく"を、
-          <br className="md:hidden" />
+          <br />
           一緒に見つけませんか？
         </h2>
-        <p className="text-white/80 text-base md:text-lg max-w-lg mx-auto mb-10">
+        <p className="text-sm text-white/40 max-w-md mx-auto mb-12 leading-relaxed">
           運動を日常に、変化は自然に。
-          <br />
           RESISTで、あなたに合ったウェルネス習慣を始めましょう。
         </p>
 
@@ -32,20 +30,18 @@ export function CTASection() {
             href={siteConfig.resistUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-lg
-                       hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+            className="btn-primary"
           >
             体験予約はこちら
-            <ArrowRight size={18} className="ml-2" />
+            <ArrowRight size={16} className="ml-3" />
           </a>
           <a
             href={siteConfig.lineUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg
-                       hover:bg-white/10 transition-all duration-300"
+            className="btn-light"
           >
-            <MessageCircle size={18} className="mr-2" />
+            <MessageCircle size={14} className="mr-3" />
             LINE登録
           </a>
         </div>

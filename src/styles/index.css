@@ -2,71 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===========================================
-   つづくウェルネス - Global Styles
-   =========================================== */
-
 @layer base {
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
   body {
     @apply font-sans text-text bg-white;
     line-height: 1.8;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold leading-tight;
+  ::selection {
+    background: rgba(255, 107, 53, 0.2);
   }
 }
 
 @layer components {
-  /* Gradient text utility */
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(135deg, #FF6B35, #E63946);
   }
-
-  /* Gradient button */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 
-           text-white font-medium rounded-lg
-           transition-all duration-300 ease-out
-           hover:shadow-lg hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center px-8 py-4
+           text-white font-medium tracking-wide rounded-none
+           transition-all duration-500 ease-out
+           hover:shadow-2xl hover:-translate-y-0.5;
     background: linear-gradient(135deg, #FF6B35, #E63946);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
   }
-
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3
-           border border-text text-text font-medium rounded-lg
-           transition-all duration-300 ease-out
+    @apply inline-flex items-center justify-center px-8 py-4
+           border text-text font-medium tracking-wide rounded-none
+           transition-all duration-500 ease-out
            hover:bg-text hover:text-white;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
   }
-
-  /* Article card hover effect */
-  .card-hover {
-    @apply transition-all duration-300 ease-out;
+  .btn-light {
+    @apply inline-flex items-center justify-center px-8 py-4
+           border border-white/30 text-white font-medium tracking-wide rounded-none
+           transition-all duration-500 ease-out
+           hover:bg-white hover:text-dark;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
   }
-  .card-hover:hover {
-    @apply -translate-y-1 shadow-lg;
-  }
-
-  /* Section spacing */
   .section-padding {
-    @apply py-16 md:py-24 px-4 md:px-8;
+    @apply py-section px-6 md:px-12;
   }
-
-  /* Container */
   .container-main {
-    @apply max-w-7xl mx-auto px-4 md:px-8;
+    @apply max-w-7xl mx-auto;
   }
-}
-
-@layer utilities {
-  /* Custom scrollbar */
+  .eyebrow {
+    @apply text-xs font-sans font-medium tracking-[0.2em] uppercase text-text-light mb-4;
+  }
+  .eyebrow-light {
+    @apply text-xs font-sans font-medium tracking-[0.2em] uppercase text-white/40 mb-4;
+  }
+  .heading-serif {
+    @apply font-serif font-light;
+  }
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;

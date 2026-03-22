@@ -10,22 +10,38 @@ export default {
         primary: {
           DEFAULT: '#FF6B35',
           dark: '#E63946',
+          light: '#FF8C5A',
+        },
+        dark: {
+          DEFAULT: '#0A0A0A',
+          soft: '#141414',
+          card: '#1A1A1A',
+          border: '#2A2A2A',
         },
         text: {
-          DEFAULT: '#2B2B2B',
-          secondary: '#666666',
-          light: '#888888',
+          DEFAULT: '#1A1A1A',
+          secondary: '#555555',
+          light: '#999999',
+          inverse: '#FFFFFF',
+          'inverse-muted': 'rgba(255,255,255,0.6)',
         },
         bg: {
           DEFAULT: '#FFFFFF',
           warm: '#FAF8F5',
-          light: '#F5F5F5',
+          cream: '#F5F0EB',
         },
-        border: '#E8E8E8',
+        border: '#E5E5E5',
       },
       fontFamily: {
-        sans: ['"Noto Sans JP"', '"DM Sans"', 'sans-serif'],
-        display: ['"DM Sans"', '"Noto Sans JP"', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', '"Noto Serif JP"', 'serif'],
+        sans: ['"Noto Sans JP"', 'sans-serif'],
+      },
+      fontSize: {
+        'hero': ['clamp(2.5rem, 6vw, 5rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'section': ['clamp(1.75rem, 3.5vw, 3rem)', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+      },
+      spacing: {
+        'section': 'clamp(5rem, 10vw, 8rem)',
       },
       backgroundImage: {
         'gradient-brand': 'linear-gradient(135deg, #FF6B35, #E63946)',
