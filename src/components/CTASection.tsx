@@ -3,46 +3,32 @@ import { siteConfig } from '@/data/siteData'
 
 export function CTASection() {
   return (
-    <section className="relative overflow-hidden bg-dark">
-      {/* Subtle accent glow */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(ellipse at 30% 50%, rgba(230,57,70,0.12) 0%, transparent 50%), radial-gradient(ellipse at 70% 60%, rgba(255,107,53,0.08) 0%, transparent 50%)',
-        }}
-      />
-
-      <div className="container-main relative px-6 md:px-12 py-section text-center">
-        <p className="eyebrow-light">Start Your Journey</p>
-        <h2 className="heading-serif text-section md:text-[clamp(2rem,4vw,3.5rem)] text-white mb-6 leading-tight">
-          あなたの"つづく"を、
+    <section className="section-padding bg-bg-cream">
+      <div className="container-main px-6 md:px-12 text-center">
+        <p className="eyebrow">Start Today</p>
+        <h2 className="heading-serif text-section text-text mb-6 leading-tight">
+          小さな一歩が、
           <br />
-          一緒に見つけませんか？
+          あなたの人生を変えていく。
         </h2>
-        <p className="text-sm text-white/40 max-w-md mx-auto mb-12 leading-relaxed">
-          運動を日常に、変化は自然に。
-          RESISTで、あなたに合ったウェルネス習慣を始めましょう。
+        <p className="text-sm text-text-secondary max-w-md mx-auto mb-10 leading-relaxed">
+          つづくウェルネスの記事は、すべて無料で読めます。
+          毎週更新される新着記事を、LINEでお届けします。
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href={siteConfig.resistUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            体験予約はこちら
+          <a href="#articles" className="btn-primary">
+            記事を読む
             <ArrowRight size={16} className="ml-3" />
           </a>
           <a
             href={siteConfig.lineUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-light"
+            className="btn-secondary"
           >
             <MessageCircle size={14} className="mr-3" />
-            LINE登録
+            LINEで新着を受け取る
           </a>
         </div>
       </div>

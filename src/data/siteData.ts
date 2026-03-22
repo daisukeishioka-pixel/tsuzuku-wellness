@@ -1,82 +1,77 @@
 import type { SiteConfig, Category, FAQ, Step } from '@/types'
 
-// ===========================================
-// Site Configuration
-// ===========================================
-
 export const siteConfig: SiteConfig = {
   name: 'つづくウェルネス',
   nameEn: 'TSUZUKU WELLNESS',
   tagline: 'からだが変わる、習慣がつづく。',
   description:
-    'つづくウェルネスは、パーソナルジムRESISTが届けるウェルネスメディア。科学的根拠に基づいたトレーニング、ピラティス、食事、セルフケアの情報で、あなたの健康習慣をサポートします。',
+    'つづくウェルネスは、健康を通じて人生の幸福を最大化するためのウェルネスメディアです。運動・食事・睡眠・メンタルケアまで、科学的根拠に基づいた情報をお届けします。',
   url: 'https://tsuzuku-wellness.vercel.app',
   resistUrl: 'https://resist-official.com',
-  lineUrl: '#', // LINE公式アカウントURL（後日設定）
+  lineUrl: '#',
   social: {
     instagram: '#',
     twitter: '#',
   },
 }
 
-// ===========================================
-// Categories
-// ===========================================
-
 export const categories: Category[] = [
   {
-    slug: 'training',
-    name: 'トレーニング',
-    nameEn: 'Training',
-    emoji: '🏋️',
-    description: '初心者から上級者まで、正しいフォームと効果的なメニューを紹介',
+    slug: 'movement',
+    name: '動くからだ',
+    nameEn: 'Movement',
+    emoji: '🏃',
+    description: '日常に取り入れられる運動習慣。ストレッチから筋トレまで、無理なく続けられる方法を紹介',
     color: '#FF6B35',
   },
   {
-    slug: 'pilates',
-    name: 'ピラティス',
-    nameEn: 'Pilates',
-    emoji: '🧘',
-    description: '体幹を鍛え、姿勢を改善するピラティスの魅力をお届け',
-    color: '#E63946',
-  },
-  {
     slug: 'nutrition',
-    name: '食事・栄養',
+    name: '食べるちから',
     nameEn: 'Nutrition',
-    emoji: '🍽️',
-    description: '無理なく続けられる食事管理と栄養の基礎知識',
+    emoji: '🥗',
+    description: '制限ではなく、満たす食事。栄養学の知見に基づいた、心もからだも喜ぶ食の知識',
     color: '#4CAF50',
   },
   {
-    slug: 'selfcare',
-    name: 'セルフケア',
-    nameEn: 'Self Care',
-    emoji: '😌',
-    description: 'ストレッチ、リカバリー、睡眠改善で毎日を快適に',
-    color: '#2196F3',
+    slug: 'rest',
+    name: '休むじかん',
+    nameEn: 'Rest & Recovery',
+    emoji: '🌙',
+    description: '質の高い睡眠とリカバリー。休むことも、立派なウェルネス習慣',
+    color: '#5C6BC0',
+  },
+  {
+    slug: 'mind',
+    name: 'ととのえる心',
+    nameEn: 'Mindfulness',
+    emoji: '🧘',
+    description: 'ストレスとの向き合い方、瞑想、呼吸法。心の健康が、すべての土台になる',
+    color: '#AB47BC',
   },
   {
     slug: 'habits',
-    name: '習慣づくり',
+    name: 'つづく習慣',
     nameEn: 'Habits',
-    emoji: '💡',
-    description: '運動を日常に。続けるためのマインドセットとコツ',
+    emoji: '✨',
+    description: '三日坊主を卒業する。行動科学に基づいた、習慣づくりのヒント',
     color: '#FF9800',
   },
   {
     slug: 'stories',
-    name: '体験ストーリー',
+    name: '変わった人たち',
     nameEn: 'Stories',
-    emoji: '📖',
-    description: 'RESISTメンバーのリアルな変化と成長の記録',
-    color: '#9C27B0',
+    emoji: '💬',
+    description: '小さな習慣で人生が変わった、リアルな体験談を集めました',
+    color: '#E63946',
   },
 ]
 
-// ===========================================
-// How it Works (RESIST体験フロー)
-// ===========================================
+export const trustBadges = [
+  { label: '有資格トレーナー監修', icon: 'Shield' },
+  { label: '科学的エビデンスに基づく情報', icon: 'BookOpen' },
+  { label: 'すべて無料で読める', icon: 'Heart' },
+  { label: '毎週更新', icon: 'Clock' },
+]
 
 export const howItWorksSteps: Step[] = [
   {
@@ -99,45 +94,30 @@ export const howItWorksSteps: Step[] = [
   },
 ]
 
-// ===========================================
-// Trust Badges
-// ===========================================
-
-export const trustBadges = [
-  { label: '有資格トレーナー監修', icon: 'Shield' },
-  { label: '科学的根拠に基づく情報', icon: 'BookOpen' },
-  { label: '月額49,800円 通い放題', icon: 'Infinity' },
-  { label: '西新宿・北浦和 2店舗展開', icon: 'MapPin' },
-]
-
-// ===========================================
-// FAQ
-// ===========================================
-
 export const faqs: FAQ[] = [
   {
     question: 'つづくウェルネスとは何ですか？',
     answer:
-      'つづくウェルネスは、パーソナルジム＆ピラティススタジオ「RESIST」が運営するウェルネスメディアです。科学的根拠に基づいたトレーニング、ピラティス、食事、セルフケアの情報を発信し、運動習慣を「つづける」ためのサポートをしています。',
+      '「つづくウェルネス」は、健康を通じて人生の幸福を最大化することを目指すウェルネスメディアです。運動・食事・睡眠・メンタルケアなど、日々の暮らしに取り入れられる健康習慣を、科学的根拠に基づいて発信しています。',
   },
   {
-    question: 'RESISTとはどんなジムですか？',
+    question: '記事は誰が監修していますか？',
     answer:
-      'RESISTは月額49,800円の通い放題サブスクリプション型パーソナルジム＆ピラティススタジオです。1回30分のセッションで、好きなだけ通えます。現在、西新宿と北浦和に2店舗を展開しています。',
+      'すべての記事は、パーソナルジム＆ピラティススタジオ「RESIST」の有資格トレーナーが監修しています。NSCA-CPT、NESTA-PFTなどの資格を持つ専門家が、最新の研究やエビデンスに基づいて内容を確認しています。',
   },
   {
-    question: '記事の信頼性はどのように担保されていますか？',
+    question: '記事はすべて無料で読めますか？',
     answer:
-      '全ての記事はRESISTの有資格トレーナーが監修しています。科学的研究やエビデンスに基づいた情報のみを掲載し、根拠のない情報は発信しません。',
+      'はい、すべての記事を無料で公開しています。健康に関する正しい情報は、誰もがアクセスできるべきだと考えています。',
   },
   {
-    question: '体験予約はどこからできますか？',
+    question: '特定の症状や病気についての医療アドバイスは受けられますか？',
     answer:
-      '記事内のCTAボタンまたはRESIST公式サイト（resist-official.com）から体験予約が可能です。30秒で予約完了します。',
+      '当メディアは健康に関する一般的な情報提供を目的としており、医療アドバイスの代替ではありません。具体的な症状や病気については、必ず医療機関にご相談ください。',
   },
   {
-    question: 'LINE公式アカウントでは何が届きますか？',
+    question: 'トレーナーに直接相談したい場合はどうすれば良いですか？',
     answer:
-      '毎週1つ、カラダが変わる習慣のヒントをお届けしています。ウェルネスコラム、トレーニングTips、限定コンテンツなどを配信中です。',
+      '記事を監修しているRESISTでは、体験セッションを受け付けています。記事の内容をトレーナーと一緒に実践したい方は、RESIST公式サイトから体験予約が可能です。',
   },
 ]

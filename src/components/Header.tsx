@@ -17,19 +17,15 @@ export function Header() {
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-border'
-          : 'bg-transparent'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm'
+          : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <span
-            className={`text-lg tracking-wide transition-colors duration-500 ${
-              scrolled ? 'text-text' : 'text-white'
-            }`}
-          >
+          <span className="text-text">
             <span className="font-serif font-light text-xl">つづく</span>
-            <span className="font-sans font-light text-sm tracking-[0.15em] ml-1">WELLNESS</span>
+            <span className="font-sans font-light text-[0.7rem] tracking-[0.15em] ml-1 text-text-secondary">WELLNESS</span>
           </span>
         </Link>
 
@@ -38,27 +34,18 @@ export function Header() {
             <Link
               key={cat.slug}
               to={`/category/${cat.slug}`}
-              className={`text-xs tracking-[0.12em] uppercase transition-colors duration-500 hover:opacity-60 ${
-                scrolled ? 'text-text-secondary' : 'text-white/70'
-              }`}
+              className="text-xs tracking-[0.1em] uppercase text-text-secondary hover:text-text transition-colors duration-300"
             >
               {cat.nameEn}
             </Link>
           ))}
-          <a
-            href={siteConfig.resistUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary !py-2.5 !px-5 !text-[0.7rem]"
-          >
-            体験予約
+          <a href="#articles" className="btn-primary !py-2 !px-5 !text-[0.65rem]">
+            記事を読む
           </a>
         </nav>
 
         <button
-          className={`md:hidden p-2 transition-colors ${
-            scrolled ? 'text-text' : 'text-white'
-          }`}
+          className="md:hidden p-2 text-text"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="メニュー"
         >
@@ -67,26 +54,26 @@ export function Header() {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-dark text-white">
-          <nav className="px-6 py-8 flex flex-col gap-5">
+        <div className="md:hidden bg-white border-t border-border">
+          <nav className="px-6 py-6 flex flex-col gap-4">
             {categories.map((cat) => (
               <Link
                 key={cat.slug}
                 to={`/category/${cat.slug}`}
-                className="text-sm tracking-[0.1em] uppercase text-white/60 hover:text-white transition-colors"
+                className="text-sm tracking-[0.05em] text-text-secondary hover:text-text transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {cat.name}
               </Link>
             ))}
-            <hr className="border-dark-border my-2" />
+            <hr className="border-border my-1" />
             <a
               href={siteConfig.resistUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-center"
+              className="text-sm text-text-light"
             >
-              体験予約
+              監修: RESIST公式サイト →
             </a>
           </nav>
         </div>

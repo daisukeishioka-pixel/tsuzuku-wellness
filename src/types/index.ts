@@ -3,10 +3,10 @@
 // ===========================================
 
 export type CategorySlug =
-  | 'training'
-  | 'pilates'
+  | 'movement'
   | 'nutrition'
-  | 'selfcare'
+  | 'rest'
+  | 'mind'
   | 'habits'
   | 'stories'
 
