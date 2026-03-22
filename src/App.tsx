@@ -6,6 +6,9 @@ import { Footer } from './components/Footer'
 import { HomePage } from './pages/HomePage'
 import { ArticlePage } from './pages/ArticlePage'
 import { CategoryPage } from './pages/CategoryPage'
+import { AboutPage } from './pages/AboutPage'
+import { BMIPage } from './pages/BMIPage'
+import { CaloriePage } from './pages/CaloriePage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -24,6 +27,9 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/article/:slug" element={<ArticlePage />} />
             <Route path="/category/:slug" element={<CategoryPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/tools/bmi" element={<BMIPage />} />
+            <Route path="/tools/calorie" element={<CaloriePage />} />
           </Routes>
         </main>
         <Footer />
