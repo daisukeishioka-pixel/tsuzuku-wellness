@@ -56,9 +56,9 @@ export function PhilosophySection() {
           </p>
         </div>
 
-        {/* 5 Pillars - horizontal scroll on mobile, grid on desktop */}
+        {/* 5 Pillars - horizontal scroll on mobile, 5-col grid on desktop */}
         <div className="overflow-x-auto scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0 md:overflow-visible">
-          <div className="flex gap-4 md:grid md:grid-cols-3 lg:grid-cols-5 md:gap-5" style={{ minWidth: 'max-content' }}>
+          <div className="flex gap-4 md:grid md:grid-cols-5 md:gap-4 lg:gap-6" style={{ minWidth: 'max-content' }}>
             {pillars.map((pillar, i) => (
               <motion.div
                 key={pillar.number}
@@ -66,9 +66,9 @@ export function PhilosophySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.6 }}
-                className="group w-[160px] md:w-auto shrink-0 md:shrink"
+                className="group w-[150px] md:w-auto shrink-0 md:shrink"
               >
-                <div className="aspect-[5/6] overflow-hidden mb-3 md:mb-4">
+                <div className="aspect-[4/3] overflow-hidden mb-3">
                   <img
                     src={pillar.image}
                     alt={pillar.title}
@@ -77,9 +77,9 @@ export function PhilosophySection() {
                   />
                 </div>
                 <span className="text-[0.5rem] md:text-[0.55rem] tracking-[0.2em] text-text-light">{pillar.number}</span>
-                <h3 className="font-serif text-lg md:text-xl text-text mt-1 mb-0.5">{pillar.title}</h3>
-                <p className="text-[0.55rem] md:text-[0.6rem] tracking-[0.15em] uppercase text-primary/60 mb-2">{pillar.subtitle}</p>
-                <p className="text-[0.65rem] md:text-xs text-text-secondary leading-relaxed">{pillar.desc}</p>
+                <h3 className="font-serif text-base md:text-lg text-text mt-1 mb-0.5">{pillar.title}</h3>
+                <p className="text-[0.5rem] md:text-[0.55rem] tracking-[0.15em] uppercase text-primary/60 mb-1.5">{pillar.subtitle}</p>
+                <p className="text-[0.6rem] md:text-[0.7rem] text-text-secondary leading-relaxed">{pillar.desc}</p>
               </motion.div>
             ))}
           </div>
