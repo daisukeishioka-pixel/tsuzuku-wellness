@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 
@@ -18,11 +19,14 @@ export function HeroSection() {
           >
             <div className="relative w-full max-w-[90%] mx-auto lg:max-w-lg lg:mx-0 lg:ml-auto">
               {/* Main image - shorter on mobile */}
-              <div className="aspect-[4/3] md:aspect-[4/5] overflow-hidden">
-                <img
+              <div className="aspect-[4/3] md:aspect-[4/5] overflow-hidden relative">
+                <Image
                   src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&h=875&fit=crop&crop=center"
                   alt="ウェルネスイメージ"
-                  className="w-full h-full object-cover"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 768px) 90vw, 50vw"
                 />
               </div>
               {/* Floating accent card - inside image on mobile */}
@@ -32,9 +36,11 @@ export function HeroSection() {
               </div>
               {/* Small decorative image */}
               <div className="absolute -top-3 -right-3 w-20 h-20 md:w-28 md:h-28 overflow-hidden hidden md:block">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=200&h=200&fit=crop"
                   alt="栄養イメージ"
+                  width={200}
+                  height={200}
                   className="w-full h-full object-cover"
                 />
               </div>

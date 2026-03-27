@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { Clock } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -59,12 +60,13 @@ export default function CategoryPageClient({ slug }: { slug: string }) {
                   transition={{ delay: i * 0.1, duration: 0.6 }}
                 >
                   <Link href={`/article/${article.slug}`} className="group block">
-                    <div className="aspect-[16/10] overflow-hidden bg-bg-cream mb-5">
-                      <img
+                    <div className="aspect-[16/10] overflow-hidden bg-bg-cream mb-5 relative">
+                      <Image
                         src={article.imageUrl}
                         alt={article.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        loading="lazy"
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>
                     <h2 className="font-serif text-xl text-text leading-snug mb-3 group-hover:text-primary transition-colors duration-500 line-clamp-2">

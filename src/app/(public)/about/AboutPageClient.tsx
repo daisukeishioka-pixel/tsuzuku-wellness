@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Users, Radio, MapPin } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -142,12 +143,13 @@ export default function AboutPageClient() {
         <div className="container-main px-5 md:px-12">
           <div className="md:flex md:gap-16 md:items-center">
             <div className="md:w-1/2 mb-10 md:mb-0">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
+              <div className="aspect-[4/3] overflow-hidden relative">
+                <Image
                   src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&h=525&fit=crop"
                   alt="RESIST トレーニング風景"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -17,12 +18,13 @@ function ArticleCard({ article, index }: { article: (typeof sampleArticles)[0]; 
       transition={{ delay: index * 0.08, duration: 0.6 }}
     >
       <Link href={`/article/${article.slug}`} className="group block">
-        <div className="aspect-[16/10] w-full overflow-hidden bg-bg-cream mb-4">
-          <img
+        <div className="aspect-[16/10] w-full overflow-hidden bg-bg-cream mb-4 relative">
+          <Image
             src={article.imageUrl}
             alt={article.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            loading="lazy"
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
 
@@ -71,12 +73,13 @@ export function FeaturedArticles() {
 
         {/* Featured */}
         <Link href={`/article/${featured.slug}`} className="group block md:flex gap-6 md:gap-10 mb-10 md:mb-16">
-          <div className="md:w-3/5 overflow-hidden bg-bg-cream">
-            <img
+          <div className="md:w-3/5 overflow-hidden bg-bg-cream relative min-h-[280px]">
+            <Image
               src={featured.imageUrl}
               alt={featured.title}
-              className="w-full h-full min-h-[280px] object-cover transition-transform duration-700 group-hover:scale-105"
-              loading="lazy"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 60vw"
             />
           </div>
           <div className="md:w-2/5 flex flex-col justify-center py-6 md:py-4">

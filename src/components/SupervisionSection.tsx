@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { siteConfig } from '@/data/siteData'
@@ -17,12 +18,13 @@ export function SupervisionSection() {
             transition={{ duration: 0.8 }}
             className="md:w-5/12 mb-8 md:mb-0"
           >
-            <div className="aspect-[4/3] md:aspect-[3/4] overflow-hidden">
-              <img
+            <div className="aspect-[4/3] md:aspect-[3/4] overflow-hidden relative">
+              <Image
                 src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=667&fit=crop"
                 alt="RESIST トレーニング風景"
-                className="w-full h-full object-cover"
-                loading="lazy"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 42vw"
               />
             </div>
           </motion.div>

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, ArrowRight, Share2 } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -79,11 +80,14 @@ export default function ArticlePageClient({ slug }: { slug: string }) {
       {/* Hero image */}
       <div className="container-main px-5 md:px-12 mb-8 md:mb-12">
         <div className="max-w-4xl">
-          <div className="aspect-[2/1] overflow-hidden bg-bg-cream">
-            <img
+          <div className="aspect-[2/1] overflow-hidden bg-bg-cream relative">
+            <Image
               src={article.imageUrl}
               alt={article.title}
-              className="w-full h-full object-cover"
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 896px"
             />
           </div>
         </div>
@@ -195,12 +199,13 @@ export default function ArticlePageClient({ slug }: { slug: string }) {
               const cat = categories.find((c) => c.slug === a.category)
               return (
                 <Link key={a.id} href={`/article/${a.slug}`} className="group block">
-                  <div className="aspect-[16/10] overflow-hidden bg-bg-cream mb-4">
-                    <img
+                  <div className="aspect-[16/10] overflow-hidden bg-bg-cream mb-4 relative">
+                    <Image
                       src={a.imageUrl}
                       alt={a.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>
                   <span className="text-[0.6rem] tracking-[0.15em] uppercase" style={{ color: cat?.color }}>

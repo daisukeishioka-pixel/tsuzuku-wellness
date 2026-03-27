@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 const pillars = [
@@ -49,12 +50,13 @@ function PillarCard({ pillar, i }: { pillar: typeof pillars[number]; i: number }
       transition={{ delay: i * 0.08, duration: 0.6 }}
       className="group"
     >
-      <div className="aspect-[4/3] overflow-hidden mb-3">
-        <img
+      <div className="aspect-[4/3] overflow-hidden mb-3 relative">
+        <Image
           src={pillar.image}
           alt={pillar.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          loading="lazy"
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          sizes="(max-width: 768px) 150px, 20vw"
         />
       </div>
       <span className="text-[0.5rem] md:text-[0.55rem] tracking-[0.2em] text-text-light">{pillar.number}</span>

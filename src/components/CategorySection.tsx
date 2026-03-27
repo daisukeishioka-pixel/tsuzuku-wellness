@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -38,12 +39,13 @@ export function CategorySection() {
                 href={`/category/${cat.slug}`}
                 className="group relative block w-[200px] md:w-[280px] overflow-hidden"
               >
-                <div className="aspect-[3/4] overflow-hidden bg-bg-cream">
-                  <img
+                <div className="aspect-[3/4] overflow-hidden bg-bg-cream relative">
+                  <Image
                     src={categoryImages[cat.slug]}
                     alt={cat.name}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    loading="lazy"
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    sizes="(max-width: 768px) 200px, 280px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                 </div>
