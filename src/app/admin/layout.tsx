@@ -60,7 +60,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   // Show login page without sidebar
   if (pathname === '/admin/login') {
-    return <>{children}</>
+    return (
+      <>
+        <head>
+          <title>ログイン | つづく Admin</title>
+          <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23374151'/><text x='16' y='22' text-anchor='middle' font-family='sans-serif' font-weight='700' font-size='14' fill='%23f97316'>A</text></svg>" />
+        </head>
+        {children}
+      </>
+    )
   }
 
   // Redirect to login if not authenticated
@@ -77,6 +85,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   return (
     <AuthContext.Provider value={{ user }}>
+      <head>
+        <title>つづく Admin</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23374151'/><text x='16' y='22' text-anchor='middle' font-family='sans-serif' font-weight='700' font-size='14' fill='%23f97316'>A</text></svg>" />
+      </head>
       <div className="min-h-screen bg-gray-50 flex">
         {/* Mobile overlay */}
         {sidebarOpen && (
