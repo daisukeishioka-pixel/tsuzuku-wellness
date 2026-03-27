@@ -8,28 +8,35 @@ const pillars = [
     title: '動く',
     subtitle: 'Movement',
     desc: '特別なトレーニングではなく、日常の中に「動き」を取り入れる。散歩、ストレッチ、階段。小さな動きが、からだを変えていく。',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=360&fit=crop',
   },
   {
     number: '02',
     title: '食べる',
     subtitle: 'Nourish',
     desc: '制限ではなく、からだを満たす食事。何を食べるかだけでなく、どう食べるか。食事は、自分への思いやり。',
-    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=300&h=360&fit=crop',
   },
   {
     number: '03',
     title: '休む',
     subtitle: 'Rest',
     desc: '眠ること、何もしないこと、ぼーっとすること。それも立派なウェルネス。回復なくして、成長なし。',
-    image: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=400&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=300&h=360&fit=crop',
   },
   {
     number: '04',
     title: 'ととのえる',
     subtitle: 'Balance',
     desc: '心とからだは、つながっている。呼吸を整え、ストレスと上手に付き合い、自分のペースを大切にする。',
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=300&h=360&fit=crop',
+  },
+  {
+    number: '05',
+    title: 'つづける',
+    subtitle: 'Habits',
+    desc: '完璧を目指さない。三日坊主でも、また始めればいい。小さな習慣を積み重ねることが、いちばんの近道。',
+    image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=300&h=360&fit=crop',
   },
 ]
 
@@ -44,24 +51,24 @@ export function PhilosophySection() {
           </h2>
           <p className="text-sm text-text-secondary leading-relaxed max-w-lg">
             ジムに通うことだけが健康ではありません。
-            よく眠り、よく食べ、適度に動き、心を整える。
-            その小さな積み重ねが、あなたの人生を豊かにしていく。
+            よく動き、よく食べ、しっかり休み、心を整え、そしてそれを続ける。
+            この5つの循環が、あなたの人生を豊かにしていく。
           </p>
         </div>
 
-        {/* 4 Pillars - horizontal scroll on mobile, grid on desktop */}
+        {/* 5 Pillars - horizontal scroll on mobile, grid on desktop */}
         <div className="overflow-x-auto scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0 md:overflow-visible">
-          <div className="flex gap-4 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6" style={{ minWidth: 'max-content' }}>
+          <div className="flex gap-4 md:grid md:grid-cols-3 lg:grid-cols-5 md:gap-5" style={{ minWidth: 'max-content' }}>
             {pillars.map((pillar, i) => (
               <motion.div
                 key={pillar.number}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="group w-[200px] md:w-auto shrink-0 md:shrink"
+                transition={{ delay: i * 0.08, duration: 0.6 }}
+                className="group w-[160px] md:w-auto shrink-0 md:shrink"
               >
-                <div className="aspect-[3/4] overflow-hidden mb-4 md:mb-5">
+                <div className="aspect-[5/6] overflow-hidden mb-3 md:mb-4">
                   <img
                     src={pillar.image}
                     alt={pillar.title}
@@ -69,10 +76,10 @@ export function PhilosophySection() {
                     loading="lazy"
                   />
                 </div>
-                <span className="text-[0.55rem] md:text-[0.6rem] tracking-[0.2em] text-text-light">{pillar.number}</span>
-                <h3 className="font-serif text-xl md:text-2xl text-text mt-1 mb-1">{pillar.title}</h3>
-                <p className="text-[0.6rem] md:text-[0.65rem] tracking-[0.15em] uppercase text-primary/60 mb-2 md:mb-3">{pillar.subtitle}</p>
-                <p className="text-[0.7rem] md:text-xs text-text-secondary leading-relaxed">{pillar.desc}</p>
+                <span className="text-[0.5rem] md:text-[0.55rem] tracking-[0.2em] text-text-light">{pillar.number}</span>
+                <h3 className="font-serif text-lg md:text-xl text-text mt-1 mb-0.5">{pillar.title}</h3>
+                <p className="text-[0.55rem] md:text-[0.6rem] tracking-[0.15em] uppercase text-primary/60 mb-2">{pillar.subtitle}</p>
+                <p className="text-[0.65rem] md:text-xs text-text-secondary leading-relaxed">{pillar.desc}</p>
               </motion.div>
             ))}
           </div>
