@@ -6,12 +6,36 @@ import './globals.css'
 
 const GA_ID = 'G-GWM6V4J1MQ'
 
+const BASE_URL = 'https://tsuzuku-wellness.vercel.app'
+
 export const metadata: Metadata = {
-  title: 'つづくウェルネス | からだが変わる、習慣がつづく。',
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: 'つづくウェルネス | からだが変わる、習慣がつづく。',
+    template: '%s | つづくウェルネス',
+  },
   description:
     'つづくウェルネスは、パーソナルジムRESISTが届けるウェルネスメディア。科学的根拠に基づいたトレーニング、ピラティス、食事、セルフケアの情報で、あなたの健康習慣をサポートします。',
   verification: {
     google: 'WMO31wUcxAZsy2-c3bDhxY8IxDA8OZxR363EnSkmQm8',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    siteName: 'つづくウェルネス',
+    title: 'つづくウェルネス | からだが変わる、習慣がつづく。',
+    description:
+      '健康を通じて人生の幸福を最大化する。科学的根拠に基づいたウェルネス情報メディア。',
+    url: BASE_URL,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'つづくウェルネス | からだが変わる、習慣がつづく。',
+    description:
+      '健康を通じて人生の幸福を最大化する。科学的根拠に基づいたウェルネス情報メディア。',
+  },
+  alternates: {
+    canonical: BASE_URL,
   },
 }
 
