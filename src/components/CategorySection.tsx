@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+'use client'
+
+import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { categories } from '@/data/siteData'
@@ -33,7 +35,7 @@ export function CategorySection() {
               transition={{ delay: i * 0.08, duration: 0.6 }}
             >
               <Link
-                to={`/category/${cat.slug}`}
+                href={`/category/${cat.slug}`}
                 className="group relative block w-[200px] md:w-[280px] overflow-hidden"
               >
                 <div className="aspect-[3/4] overflow-hidden bg-bg-cream">

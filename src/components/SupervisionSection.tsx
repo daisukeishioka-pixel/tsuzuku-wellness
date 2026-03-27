@@ -1,3 +1,5 @@
+'use client'
+
 import { ArrowRight, CheckCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { siteConfig } from '@/data/siteData'

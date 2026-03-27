@@ -1,5 +1,7 @@
+'use client'
+
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { siteConfig, categories } from '@/data/siteData'
 
@@ -22,7 +24,7 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-14 md:h-20">
-        <Link to="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <span className="text-text">
             <span className="font-serif font-light text-xl">つづく</span>
             <span className="font-sans font-light text-[0.7rem] tracking-[0.15em] ml-1 text-text-secondary">WELLNESS</span>
@@ -33,7 +35,7 @@ export function Header() {
           {categories.slice(0, 4).map((cat) => (
             <Link
               key={cat.slug}
-              to={`/category/${cat.slug}`}
+              href={`/category/${cat.slug}`}
               className="text-xs tracking-[0.1em] uppercase text-text-secondary hover:text-text transition-colors duration-300"
             >
               {cat.nameEn}
@@ -59,7 +61,7 @@ export function Header() {
             {categories.map((cat) => (
               <Link
                 key={cat.slug}
-                to={`/category/${cat.slug}`}
+                href={`/category/${cat.slug}`}
                 className="text-sm tracking-[0.05em] text-text-secondary hover:text-text transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >

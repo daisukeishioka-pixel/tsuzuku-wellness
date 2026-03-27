@@ -1,3 +1,5 @@
+'use client'
+
 import { siteConfig, howItWorksSteps } from '@/data/siteData'
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
