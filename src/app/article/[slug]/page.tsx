@@ -1,4 +1,7 @@
-import { useParams, Link } from 'react-router-dom'
+'use client'
+
+import { useParams } from 'next/navigation'
+import Link from 'next/link'
 import { Clock, ArrowRight, Share2 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { sampleArticles } from '@/data/articles'
@@ -6,8 +9,9 @@ import { articleContents } from '@/data/articleContent'
 import { categories } from '@/data/siteData'
 import { ArticleCTAInline, ArticleCTABottom } from '@/components/ArticleCTA'
 
-export function ArticlePage() {
-  const { slug } = useParams<{ slug: string }>()
+export default function ArticlePage() {
+  const params = useParams<{ slug: string }>()
+  const slug = params.slug
   const article = sampleArticles.find((a) => a.slug === slug)
   const content = slug ? articleContents[slug] : null
   const category = article ? categories.find((c) => c.slug === article.category) : null
@@ -17,7 +21,7 @@ export function ArticlePage() {
       <div className="min-h-screen flex items-center justify-center pt-20">
         <div className="text-center">
           <h1 className="font-serif text-3xl text-text mb-4">記事が見つかりません</h1>
-          <Link to="/" className="text-primary text-sm hover:underline">トップに戻る</Link>
+          <Link href="/" className="text-primary text-sm hover:underline">トップに戻る</Link>
         </div>
       </div>
     )
@@ -34,9 +38,9 @@ export function ArticlePage() {
       {/* Breadcrumb */}
       <div className="container-main px-5 md:px-12 py-3 md:py-4">
         <nav className="flex items-center gap-2 text-[0.65rem] text-text-light">
-          <Link to="/" className="hover:text-primary transition-colors">TOP</Link>
+          <Link href="/" className="hover:text-primary transition-colors">TOP</Link>
           <span>/</span>
-          <Link to={`/category/${article.category}`} className="hover:text-primary transition-colors">
+          <Link href={`/category/${article.category}`} className="hover:text-primary transition-colors">
             {category?.name}
           </Link>
           <span>/</span>
@@ -193,7 +197,7 @@ export function ArticlePage() {
             {relatedArticles.map((a) => {
               const cat = categories.find((c) => c.slug === a.category)
               return (
-                <Link key={a.id} to={`/article/${a.slug}`} className="group block">
+                <Link key={a.id} href={`/article/${a.slug}`} className="group block">
                   <div className="aspect-[16/10] overflow-hidden bg-bg-cream mb-4">
                     <img
                       src={a.imageUrl}
@@ -221,7 +225,7 @@ export function ArticlePage() {
       {/* Next article */}
       <div className="border-t border-border">
         <Link
-          to={`/article/${nextArticle.slug}`}
+          href={`/article/${nextArticle.slug}`}
           className="container-main px-5 md:px-12 py-8 flex items-center justify-between group"
         >
           <div>

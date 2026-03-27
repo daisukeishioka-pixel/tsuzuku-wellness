@@ -1,11 +1,15 @@
-import { useParams, Link } from 'react-router-dom'
+'use client'
+
+import { useParams } from 'next/navigation'
+import Link from 'next/link'
 import { Clock } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { sampleArticles } from '@/data/articles'
 import { categories } from '@/data/siteData'
 
-export function CategoryPage() {
-  const { slug } = useParams<{ slug: string }>()
+export default function CategoryPage() {
+  const params = useParams<{ slug: string }>()
+  const slug = params.slug
   const category = categories.find((c) => c.slug === slug)
   const articles = sampleArticles.filter((a) => a.category === slug)
   const otherCategories = categories.filter((c) => c.slug !== slug)
@@ -15,7 +19,7 @@ export function CategoryPage() {
       <div className="min-h-screen flex items-center justify-center pt-20">
         <div className="text-center">
           <h1 className="font-serif text-3xl text-text mb-4">カテゴリが見つかりません</h1>
-          <Link to="/" className="text-primary text-sm hover:underline">トップに戻る</Link>
+          <Link href="/" className="text-primary text-sm hover:underline">トップに戻る</Link>
         </div>
       </div>
     )
@@ -57,7 +61,7 @@ export function CategoryPage() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.6 }}
                 >
-                  <Link to={`/article/${article.slug}`} className="group block">
+                  <Link href={`/article/${article.slug}`} className="group block">
                     <div className="aspect-[16/10] overflow-hidden bg-bg-cream mb-5">
                       <img
                         src={article.imageUrl}
@@ -88,7 +92,7 @@ export function CategoryPage() {
               <p className="text-sm text-text-secondary mb-6">
                 このカテゴリの記事は現在準備中です。
               </p>
-              <Link to="/" className="text-xs tracking-[0.1em] uppercase text-primary hover:underline">
+              <Link href="/" className="text-xs tracking-[0.1em] uppercase text-primary hover:underline">
                 トップに戻る
               </Link>
             </div>
@@ -107,7 +111,7 @@ export function CategoryPage() {
             {otherCategories.map((cat) => (
               <Link
                 key={cat.slug}
-                to={`/category/${cat.slug}`}
+                href={`/category/${cat.slug}`}
                 className="group p-5 bg-white border border-border hover:border-primary/30 transition-all duration-300"
               >
                 <p className="text-[0.6rem] tracking-[0.15em] uppercase text-text-light mb-1">

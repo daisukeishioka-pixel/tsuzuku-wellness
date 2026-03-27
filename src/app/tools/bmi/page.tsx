@@ -1,5 +1,7 @@
+'use client'
+
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Info } from 'lucide-react'
 
@@ -21,7 +23,7 @@ function getBMICategory(bmi: number): BMICategory {
   return bmiCategories[4]
 }
 
-export function BMIPage() {
+export default function BMIPage() {
   const [height, setHeight] = useState('')
   const [weight, setWeight] = useState('')
   const [result, setResult] = useState<{ bmi: number; category: BMICategory; idealWeight: number } | null>(null)
@@ -51,7 +53,6 @@ export function BMIPage() {
 
       <section className="section-padding bg-white">
         <div className="container-main px-5 md:px-12 max-w-2xl">
-          {/* Calculator */}
           <div className="p-6 md:p-8 bg-bg-warm border border-border mb-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
               <div>
@@ -80,7 +81,6 @@ export function BMIPage() {
             </button>
           </div>
 
-          {/* Result */}
           {result && (
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -121,7 +121,6 @@ export function BMIPage() {
             </motion.div>
           )}
 
-          {/* BMI Scale */}
           <div className="mb-12">
             <h2 className="font-serif text-xl text-text mb-5">BMIの分類（日本肥満学会基準）</h2>
             <div className="space-y-2">
@@ -135,7 +134,6 @@ export function BMIPage() {
             </div>
           </div>
 
-          {/* Disclaimer */}
           <div className="flex items-start gap-3 p-4 bg-bg-warm border-l-2 border-text-light">
             <Info size={16} className="shrink-0 text-text-light mt-0.5" />
             <p className="text-xs text-text-secondary leading-relaxed">
@@ -145,7 +143,6 @@ export function BMIPage() {
             </p>
           </div>
 
-          {/* Related articles */}
           <div className="mt-16">
             <p className="eyebrow">Related</p>
             <h3 className="font-serif text-lg text-text mb-4">あわせて読みたい記事</h3>
@@ -154,7 +151,7 @@ export function BMIPage() {
                 { title: '歩くだけで幸福度が上がる？　散歩と幸福感の科学的な関係', slug: 'walking-happiness' },
                 { title: '「何を食べるか」より「どう食べるか」。マインドフルイーティング入門', slug: 'mindful-eating' },
               ].map((a) => (
-                <Link key={a.slug} to={`/article/${a.slug}`} className="block text-sm text-primary hover:underline">
+                <Link key={a.slug} href={`/article/${a.slug}`} className="block text-sm text-primary hover:underline">
                   → {a.title}
                 </Link>
               ))}

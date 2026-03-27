@@ -1,5 +1,7 @@
+'use client'
+
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Info } from 'lucide-react'
 
@@ -26,7 +28,7 @@ interface CalorieResult {
   macros: { protein: number; fat: number; carb: number }
 }
 
-export function CaloriePage() {
+export default function CaloriePage() {
   const [gender, setGender] = useState<'male' | 'female'>('male')
   const [age, setAge] = useState('')
   const [height, setHeight] = useState('')
@@ -75,7 +77,6 @@ export function CaloriePage() {
       <section className="section-padding bg-white">
         <div className="container-main px-5 md:px-12 max-w-2xl">
           <div className="p-6 md:p-8 bg-bg-warm border border-border mb-8">
-            {/* Gender */}
             <div className="mb-5">
               <label className="text-[0.65rem] tracking-[0.15em] uppercase text-text-light block mb-2">性別</label>
               <div className="flex gap-3">
@@ -95,7 +96,6 @@ export function CaloriePage() {
               </div>
             </div>
 
-            {/* Age, Height, Weight */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-5">
               <div>
                 <label className="text-[0.65rem] tracking-[0.15em] uppercase text-text-light block mb-2">年齢</label>
@@ -114,7 +114,6 @@ export function CaloriePage() {
               </div>
             </div>
 
-            {/* Activity level */}
             <div className="mb-6">
               <label className="text-[0.65rem] tracking-[0.15em] uppercase text-text-light block mb-2">活動レベル</label>
               <div className="space-y-2">
@@ -142,7 +141,6 @@ export function CaloriePage() {
             </button>
           </div>
 
-          {/* Result */}
           {result && (
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-12">
               <div className="p-6 md:p-8 border border-border">
@@ -159,7 +157,6 @@ export function CaloriePage() {
                   </div>
                 </div>
 
-                {/* Goal targets */}
                 <h3 className="font-serif text-lg text-text mb-4">目標別の摂取カロリー目安</h3>
                 <div className="space-y-2 mb-8">
                   {result.targets.map((t) => (
@@ -173,7 +170,6 @@ export function CaloriePage() {
                   ))}
                 </div>
 
-                {/* Macros */}
                 <h3 className="font-serif text-lg text-text mb-4">PFCバランス目安（維持カロリー）</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                   {[
@@ -192,7 +188,6 @@ export function CaloriePage() {
             </motion.div>
           )}
 
-          {/* Explanation */}
           <div className="mb-12">
             <h2 className="font-serif text-xl text-text mb-4">計算式について</h2>
             <p className="text-sm text-text-secondary leading-[1.9] mb-3">
@@ -205,7 +200,6 @@ export function CaloriePage() {
             </div>
           </div>
 
-          {/* Disclaimer */}
           <div className="flex items-start gap-3 p-4 bg-bg-warm border-l-2 border-text-light">
             <Info size={16} className="shrink-0 text-text-light mt-0.5" />
             <p className="text-xs text-text-secondary leading-relaxed">
@@ -215,7 +209,6 @@ export function CaloriePage() {
             </p>
           </div>
 
-          {/* Related articles */}
           <div className="mt-16">
             <p className="eyebrow">Related</p>
             <h3 className="font-serif text-lg text-text mb-4">あわせて読みたい記事</h3>
@@ -224,7 +217,7 @@ export function CaloriePage() {
                 { title: '「何を食べるか」より「どう食べるか」。マインドフルイーティング入門', slug: 'mindful-eating' },
                 { title: '「続かない」を卒業する。ハビットスタッキングという考え方', slug: 'habit-stacking' },
               ].map((a) => (
-                <Link key={a.slug} to={`/article/${a.slug}`} className="block text-sm text-primary hover:underline">
+                <Link key={a.slug} href={`/article/${a.slug}`} className="block text-sm text-primary hover:underline">
                   → {a.title}
                 </Link>
               ))}

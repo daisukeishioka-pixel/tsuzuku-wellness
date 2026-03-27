@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+'use client'
+
+import Link from 'next/link'
 import { ArrowRight, CheckCircle, Users, Radio, MapPin } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { siteConfig, categories } from '@/data/siteData'
@@ -32,7 +34,7 @@ const timeline = [
   { year: '2026', event: 'つづくウェルネス メディアサイト公開。LINEコミュニティ開始' },
 ]
 
-export function AboutPage() {
+export default function AboutPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
@@ -123,7 +125,7 @@ export function AboutPage() {
             {categories.map((cat) => (
               <Link
                 key={cat.slug}
-                to={`/category/${cat.slug}`}
+                href={`/category/${cat.slug}`}
                 className="group p-5 md:p-6 bg-bg-warm border border-transparent hover:border-primary/20 transition-all duration-300"
               >
                 <p className="text-[0.6rem] tracking-[0.15em] uppercase text-text-light mb-1">{cat.nameEn}</p>

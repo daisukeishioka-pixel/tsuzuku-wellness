@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+'use client'
+
+import Link from 'next/link'
 import { Clock, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { sampleArticles } from '@/data/articles'
@@ -14,7 +16,7 @@ function ArticleCard({ article, index }: { article: (typeof sampleArticles)[0]; 
       viewport={{ once: true }}
       transition={{ delay: index * 0.08, duration: 0.6 }}
     >
-      <Link to={`/article/${article.slug}`} className="group block">
+      <Link href={`/article/${article.slug}`} className="group block">
         <div className="aspect-[16/10] w-full overflow-hidden bg-bg-cream mb-4">
           <img
             src={article.imageUrl}
@@ -60,7 +62,7 @@ export function FeaturedArticles() {
             </h2>
           </div>
           <Link
-            to="/category/movement"
+            href="/category/movement"
             className="hidden md:inline-flex items-center text-xs tracking-[0.1em] uppercase text-text-light hover:text-primary transition-colors"
           >
             すべて見る <ArrowRight size={12} className="ml-2" />
@@ -68,7 +70,7 @@ export function FeaturedArticles() {
         </div>
 
         {/* Featured */}
-        <Link to={`/article/${featured.slug}`} className="group block md:flex gap-6 md:gap-10 mb-10 md:mb-16">
+        <Link href={`/article/${featured.slug}`} className="group block md:flex gap-6 md:gap-10 mb-10 md:mb-16">
           <div className="md:w-3/5 overflow-hidden bg-bg-cream">
             <img
               src={featured.imageUrl}
