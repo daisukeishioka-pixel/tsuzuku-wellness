@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'つづくウェルネス | からだが変わる、習慣がつづく。',
   description:
     'つづくウェルネスは、パーソナルジムRESISTが届けるウェルネスメディア。科学的根拠に基づいたトレーニング、ピラティス、食事、セルフケアの情報で、あなたの健康習慣をサポートします。',
+  verification: {
+    google: 'WMO31wUcxAZsy2-c3bDhxY8IxDA8OZxR363EnSkmQm8',
+  },
 }
 
 export default function RootLayout({
